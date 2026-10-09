@@ -1,0 +1,3566 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Evidence Template | MCCM</title>
+<link rel="icon" type="image/jpeg" href="favicon.jpeg">
+
+
+
+<link href="https://fonts.cdnfonts.com/css/brittany-signature" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --wood: #5B4034;          /* Marrón café colonial */
+    --linen: #E8DCC8;         /* Arena cálida */
+    --clay: #7A6458;          /* Taupe cálido */
+    --purple-brown: #a5705c;  /* Borgoña profundo */
+    --port:#502834;          /* Ciruela oscura */
+    --burgundy: #42212b;       /* Vino tinto intenso */
+    --chocolate: #2c0e19;       /* Chocolate oscuro */
+    --linen-light: #F4EEE4;   /* Crema suave */
+    --linen-dark: #C9A15F;    /* Dorado viejo */
+    --redwine: #490b0b; /* Terracota vibrante */
+
+    --shadow-warm: rgba(74,34,48,0.12);
+    --shadow-deep: rgba(50,27,40,0.22);}
+*{
+
+
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+}
+/* ─── NAV ─── */
+  nav {
+    color: var(--wood);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.2rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.4s ease; 
+    backdrop-filter: blur(14px);
+   -webkit-backdrop-filter: blur(14px);
+   background: rgba(20, 15, 15, 0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+nav.scrolled {
+  background: rgba(20, 15, 15, 0.28);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.15);
+}
+  .nav-logo{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.7rem;
+
+    font-weight:600;
+
+    letter-spacing:.18em;
+
+    color:inherit;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+  
+
+
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:.72rem;
+
+    font-weight:500;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:.3s;
+
+}
+
+/* CUANDO EL FONDO ES CLARO */
+nav.light-section .nav-links a,
+nav.light-section .nav-logo {
+  color: var(--wood);
+}
+
+/* CUANDO EL FONDO ES OSCURO */
+nav.dark-section .nav-links a,
+nav.dark-section .nav-logo {
+  color: var(--linen);
+}
+  .nav-links a:hover { color: var(--clay); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span{
+
+    width:24px;
+
+    height:1.5px;
+
+    background:currentColor;
+
+    transition:.3s;
+
+}
+ 
+.nav-progress{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%, -50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:.72rem;
+
+    font-weight:500;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+
+    color:inherit;
+
+}
+
+/* ========================= */
+/* NAV COLORS */
+/* ========================= */
+
+nav.dark-section{
+
+    color:var(--linen);
+
+}
+
+nav.light-section{
+
+    color:var(--wood);
+
+}
+  
+
+
+  
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:140px 8%;
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    background:
+
+    radial-gradient(
+        circle at 80% 15%,
+        rgba(201,161,95,.12),
+        transparent 40%
+    ),
+
+    radial-gradient(
+        circle at 15% 80%,
+        rgba(255,255,255,.05),
+        transparent 45%
+    ),
+
+/* Café colonial */
+linear-gradient(135deg, #18100E, #3A2420, #5B4034);
+}
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:750px;
+
+    height:750px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        rgba(201,161,95,.10),
+        transparent 70%
+    );
+
+    top:-300px;
+
+    right:-250px;
+
+    pointer-events:none;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        rgba(255,255,255,.04),
+        transparent 70%
+    );
+
+    bottom:-220px;
+
+    left:-120px;
+
+    pointer-events:none;
+
+}
+
+.hero-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+    position:relative;
+
+    z-index:2;
+
+    padding-top:80px;
+
+}
+.hero-number{
+
+font-family:'Poppins',sans-serif;
+
+letter-spacing:6px;
+
+text-transform:uppercase;
+
+color:var(--linen-dark);
+
+letter-spacing:8px;
+
+font-weight:600;
+
+margin-bottom:35px;
+
+}
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:5.6rem;
+
+    font-weight:600;
+    
+    line-height:1.05;
+
+    color:var(--linen-light);
+
+    margin-bottom:45px; 
+
+}
+.hero-text{
+
+font-family:'Poppins',sans-serif;
+
+font-size:1.1rem;
+
+line-height:2;
+
+max-width:650px;
+
+margin:auto;
+
+color:rgba(255,255,255,.82);
+
+max-width:700px;
+
+margin-bottom:60px;
+
+}
+
+.hero-tags{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+.hero-tags span{
+
+    padding:13px 24px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(12px);
+
+    color:var(--linen-light);
+
+    font-size:.82rem;
+
+    letter-spacing:.05em;
+
+    transition:.35s;
+
+}
+.hero-tags span:hover{
+
+    background:var(--linen-dark);
+
+    color:var(--chocolate);
+
+    transform:translateY(-5px);
+
+}
+
+.hero-line{
+
+    width:90px;
+
+    height:2px;
+
+    background:var(--linen-dark);
+
+    margin:35px auto 40px;
+
+    border-radius:10px;
+
+    opacity:.9;
+
+}
+
+body{
+    background: var(--linen-light);
+    font-family: 'Poppins', sans-serif;
+    color: var(--wood);
+    overflow-x: hidden;
+}
+.container{
+
+    width:min(1100px,90%);
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:120px 0;
+
+}
+.section-title{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:3.5rem;
+
+    color:var(--chocolate);
+
+    margin-bottom:25px;
+
+    line-height:1.1;
+
+}
+
+.section-text{
+
+    font-family:'Poppins', sans-serif;
+
+    color:var(--clay);
+
+    font-size:1.05rem;
+
+    line-height:2;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.hero-scroll{
+
+    margin-top:45px;
+
+    font-size:2.4rem;
+
+    color:var(--linen-dark);
+
+    animation:bounce 2s infinite;
+
+    opacity:.8;
+
+}
+
+/* ================================================= */
+/* CHALLENGE */
+/* ================================================= */
+
+.challenge{
+
+    background:var(--linen);
+
+    position:relative;
+
+}
+
+.challenge::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at top right,
+        rgba(201,161,95,.10),
+        transparent 55%
+    );
+
+    pointer-events:none;
+
+}
+.challenge-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.challenge-card{
+
+    background:var(--linen-light);
+
+    padding:28px;
+
+    border-radius:18px;
+
+    box-shadow: 0 18px 40px rgba(44,14,25,.08);
+
+}
+
+.challenge-card span{
+
+    color:var(--linen-dark);
+
+    font-size:.72rem;
+
+    letter-spacing:.30em;
+
+    font-weight:600;
+
+}
+
+.challenge-card .info-item{
+
+    margin-bottom:22px;
+
+}
+
+.challenge-card .info-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+/* ================================================= */
+/* SCREENSHOT SECTION */
+/* ================================================= */
+
+ .screenshot-header{
+
+    max-width:800px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+.screenshot-header h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:3rem;
+
+    color:var(--chocolate);
+
+    margin-bottom:18px;
+
+}
+
+.screenshot-header p{
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--clay);
+
+    line-height:1.9;
+
+    font-size:1rem;
+
+}
+
+.screenshot-card{
+
+    background:white;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 60px rgba(44,14,25,.10);
+
+    border:1px solid rgba(0,0,0,.05);
+
+    transition:.45s;
+
+}
+
+.screenshot-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 28px 70px var(--shadow-deep);
+
+}
+
+
+.screenshot-card img{
+
+    width:100%;
+
+    display:block;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.screenshot-card:hover img{
+
+    transform:scale(1.025);
+
+}
+
+.screenshot-description{
+
+    padding:45px;
+
+}
+
+.screenshot-description h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+    margin-bottom:18px;
+
+    color:var(--chocolate);
+
+}
+
+.screenshot-description p{
+
+    line-height:2;
+
+    color:var(--clay);
+
+}
+
+/* ========================= */
+/* SCREENSHOT FEATURES */
+/* ========================= */
+
+.screenshot-features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:16px 20px;
+
+    background:white;
+
+    border-radius:16px;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    transition:.35s;
+
+}
+
+.feature:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 28px var(--shadow-warm);
+
+}
+
+.feature-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--burgundy),
+        var(--purple-brown)
+    );
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:1.4rem;
+
+    flex-shrink:0;
+
+    transition:.35s;
+
+}
+
+.feature:hover .feature-icon{
+
+    transform:rotate(-6deg) scale(1.08);
+
+}
+
+.feature-text h4{
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:var(--chocolate);
+
+    font-size:1.2rem;
+
+    margin-bottom:4px;
+
+}
+
+.feature-text p{
+
+    font-size:.88rem;
+
+    color:var(--clay);
+
+    line-height:1.5;
+
+}
+
+ .section-label{
+
+    font-size:.85rem;
+
+    letter-spacing:5px;
+
+    color:var(--linen-dark);
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+/* ========================= */
+/* SECTION DIVIDER */
+/* ========================= */
+
+.section-divider{
+
+    width:80px;
+
+    height:1px;
+
+    background:var(--linen-dark);
+
+    margin:0 auto;
+
+    opacity:.45;
+
+}
+
+/* ========================= */
+/* OBJECTIVES */
+/* ========================= */
+
+/* ================================================= */
+/* WORKFLOW */
+/* ================================================= */
+
+.workflow{
+
+    background:var(--linen);
+
+    position:relative;
+
+}
+
+.workflow::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top right,
+    rgba(201,161,95,.12),
+    transparent 60%);
+
+    pointer-events:none;
+
+}
+
+.process-line{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    position:relative;
+
+}
+
+.process-line::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:35px;
+
+    left:10%;
+
+    right:10%;
+
+    height:3px;
+
+    background:linear-gradient(
+        90deg,
+        var(--gold),
+        var(--purple-brown)
+    );
+
+    z-index:0;
+
+}
+
+.process-step{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+}
+
+.circle{
+
+    width:72px;
+
+    height:72px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:/* Café colonial */
+linear-gradient(135deg,  #3A2420, #5B4034);
+
+    color:white;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.8rem;
+
+    box-shadow:0 12px 30px rgba(80,40,52,.25);
+
+    margin-bottom:25px;
+
+    transition:.35s;
+
+}
+
+.process-step:hover .circle{
+
+    transform:scale(1.12);
+
+}
+
+.process-step h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.55rem;
+
+    color:var(--chocolate);
+
+    margin-bottom:10px;
+
+}
+
+.process-step p{
+
+    font-size:.92rem;
+
+    color:var(--clay);
+
+    line-height:1.7;
+
+    max-width:180px;
+
+    margin:auto;
+
+}
+
+
+/* ========================= */
+/* FINAL RESULT */
+/* ========================= */
+.final-result{
+
+background:
+
+/* Café colonial */
+linear-gradient(135deg, #18100E, #3A2420, #5B4034);
+}
+.result-grid{
+
+    display:grid;
+    grid-template-columns:1.6fr .9fr;
+    gap:60px;
+    align-items:start;
+    margin-top:60px;
+
+}
+
+.result-box h2{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    color:#F8F3EC;
+
+    margin-bottom:18px;
+}
+
+.result-box p{
+
+    color:#E8DCC8;
+    line-height:1.9;
+    margin-bottom:18px;
+
+}
+.result-list{
+
+    margin-top:0px;
+
+}
+
+.result-item{
+
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    margin-bottom:16px;
+
+}
+
+.result-item p{
+
+    margin:0;
+
+}
+
+.result-item span{
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(201,161,95,.25);
+
+    color:var(--linen-dark);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:.9rem;
+
+}
+
+
+
+.summary-label{
+
+    font-size:.72rem;
+
+    letter-spacing:.45em;
+
+    text-transform:uppercase;
+
+    color:rgba(232,220,200,.55);
+
+    margin-bottom:35px;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    padding:16px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.summary-item span{
+
+    font-size:.7rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.28em;
+
+    color:rgba(232,220,200,.55);
+
+}
+
+.summary-item p{
+
+    color:var(--linen);
+
+    text-align:right;
+
+    max-width:70%;
+
+    line-height:1.7;
+
+}
+
+.case-summary blockquote{
+
+    margin-top:35px;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    font-style:italic;
+
+    color:rgba(232,220,200,.85);
+
+    line-height:1.9;
+
+}
+
+.final-result .section-label{
+
+    color:var(--linen-dark);
+
+}
+
+
+/* ====================================== */
+/* SCROLL ANIMATIONS */
+/* ====================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+  /* ─── FOOTER ─── */
+  footer {
+      background: #2b1a10;
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(213,196,161,0.08);
+    }
+    .footer-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem; font-weight: 300; letter-spacing: 0.28em;
+        color: rgba(213,196,161,0.4); margin-bottom: 0.5rem;
+        font-weight: bolder;
+    }
+    .footer-text {
+      font-weight: bolder;
+    font-size: 0.68rem; letter-spacing: 0.1em;
+    color: rgba(213,196,161,0.25);
+  }
+
+@keyframes bounce{
+
+0%,20%,50%,80%,100%{
+
+transform:translateY(0);
+
+}
+
+40%{
+
+transform:translateY(12px);
+
+}
+
+60%{
+
+transform:translateY(6px);
+
+}
+
+}
+/* =========================================================
+   EVIDENCE 04
+   THE WORK — TOOL WORKFLOW
+   ========================================================= */
+
+.e04-work {
+    position: relative;
+    width: 100%;
+    padding: 120px 7vw 140px;
+    background: var(--linen-light, #F4EEE4);
+    color: var(--chocolate, #2c0e19);
+}
+
+
+/* =========================================================
+   TOOL SECTION
+   ========================================================= */
+
+.e04-tool-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 150px;
+}
+
+.e04-tool-section:last-of-type {
+    margin-bottom: 90px;
+}
+ 
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.e04-section-heading {
+    position: relative;
+    display: grid;
+    grid-template-columns: 150px 1fr auto;
+    gap: 45px;
+    align-items: end;
+    margin-bottom: 70px;
+}
+
+.e04-section-number {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--clay, #7A6458);
+    padding-bottom: 10px;
+}
+
+.e04-section-heading-content {
+    max-width: 760px;
+}
+
+.e04-section-heading-content h2 {
+    margin: 0 0 18px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.5rem, 4vw, 4.3rem);
+    line-height: 0.95;
+    font-weight: 500;
+    color: var(--chocolate, #2c0e19);
+}
+
+.e04-section-heading-content p {
+    max-width: 650px;
+    margin: 0 0 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--clay, #7A6458);
+}
+
+.e04-tool-tags {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.63rem;
+    letter-spacing: 0.16em;
+    font-weight: 600;
+    color: var(--burgundy, #42212b);
+}
+
+
+/* =========================================================
+   TOOL BUTTON
+   ========================================================= */
+
+.e04-tool-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-width: 205px;
+    padding: 15px 21px;
+
+    border: 1px solid var(--burgundy, #42212b);
+    border-radius: 999px;
+
+    color: var(--burgundy, #42212b);
+    background: transparent;
+
+    text-decoration: none;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.e04-tool-button:hover {
+    background: var(--burgundy, #42212b);
+    color: var(--linen-light, #F4EEE4);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(44, 14, 25, 0.12);
+}
+
+.e04-button-arrow {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SCREENSHOT BLOCK
+   ========================================================= */
+
+.e04-screenshot-block {
+    width: 100%;
+}
+
+.e04-screenshot-block.e04-full {
+    margin-bottom: 90px;
+}
+
+.e04-screenshot-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 18px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: var(--clay, #7A6458);
+}
+
+.e04-screenshot-label span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: var(--burgundy, #42212b);
+    color: var(--linen-light, #F4EEE4);
+
+    font-size: 0.62rem;
+}
+
+
+/* =========================================================
+   IMAGE FRAME
+   ========================================================= */
+
+.e04-image-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    background: #ded3c5;
+
+    box-shadow:
+        0 25px 60px rgba(44, 14, 25, 0.10),
+        0 3px 12px rgba(44, 14, 25, 0.06);
+}
+
+.e04-image-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.e04-image-frame:hover img {
+    transform: scale(1.012);
+}
+
+.e04-image-tall img {
+    max-height: none;
+}
+
+
+/* =========================================================
+   TWO COLUMN SCREENSHOTS
+   ========================================================= */
+
+.e04-two-column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 55px;
+
+    margin-bottom: 100px;
+}
+
+.e04-two-column .e04-screenshot-block {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   INFO CARDS
+   ========================================================= */
+
+.e04-card-grid {
+    display: grid;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.e04-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.e04-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.e04-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.e04-info-card {
+    position: relative;
+
+    padding: 24px 24px 26px;
+
+    border-radius: 14px;
+    border: 1px solid rgba(66, 33, 43, 0.12);
+
+    background: rgba(255, 255, 255, 0.45);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+
+.e04-info-card:hover {
+    transform: translateY(-4px);
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 15px 35px rgba(44, 14, 25, 0.08);
+}
+
+.e04-card-number {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.61rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+
+    color: var(--linen-dark, #C9A15F);
+}
+
+.e04-info-card h3 {
+    margin: 0 0 10px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.45rem;
+    line-height: 1.05;
+    font-weight: 600;
+
+    color: var(--chocolate, #2c0e19);
+}
+
+.e04-info-card p {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.76rem;
+    line-height: 1.75;
+
+    color: var(--clay, #7A6458);
+}
+
+
+/* =========================================================
+   CARD STACK
+   ========================================================= */
+
+.e04-card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.e04-card-stack .e04-info-card {
+    padding: 19px 21px;
+}
+
+.e04-card-stack .e04-info-card h3 {
+    font-size: 1.28rem;
+}
+
+
+/* =========================================================
+   RESOURCE BLOCK
+   SCREENSHOT 06
+   ========================================================= */
+
+.e04-resource-block {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+    gap: 55px;
+    align-items: start;
+
+    margin-bottom: 100px;
+}
+
+.e04-resource-image {
+    min-width: 0;
+}
+
+.e04-resource-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding-top: 48px;
+}
+
+.e04-resource-cards .e04-info-card {
+    padding: 18px 21px;
+}
+
+.e04-resource-cards .e04-info-card h3 {
+    font-size: 1.25rem;
+}
+
+.e04-resource-cards .e04-info-card p {
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   TOOL SEPARATION
+   ========================================================= */
+
+.clickup-section {
+    padding-top: 40px;
+    border-top: 1px solid rgba(66, 33, 43, 0.15);
+}
+
+.sheets-section {
+    padding-top: 40px;
+    border-top: 1px solid rgba(66, 33, 43, 0.15);
+}
+
+
+/* =========================================================
+   FROM DATA TO DECISIONS
+   ========================================================= */
+
+.e04-data-transition {
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding-top: 65px;
+
+    border-top: 1px solid rgba(66, 33, 43, 0.18);
+
+    text-align: center;
+}
+
+.e04-data-transition span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+
+    color: var(--linen-dark, #C9A15F);
+}
+
+.e04-data-transition p {
+    max-width: 700px;
+    margin: 0 auto;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.7rem, 2.5vw, 2.5rem);
+    line-height: 1.15;
+
+    color: var(--chocolate, #2c0e19);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .e04-section-heading {
+        grid-template-columns: 110px 1fr;
+        gap: 30px;
+    }
+
+    .e04-tool-button {
+        grid-column: 2;
+        justify-self: start;
+        margin-top: 10px;
+    }
+
+    .e04-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .e04-resource-block {
+        grid-template-columns: 1fr;
+    }
+
+    .e04-resource-cards {
+        padding-top: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .e04-work {
+        padding: 80px 5vw 100px;
+    }
+
+    .e04-tool-section {
+        margin-bottom: 100px;
+    }
+
+    .e04-section-heading {
+        display: block;
+        margin-bottom: 45px;
+    }
+
+    .e04-section-number {
+        margin-bottom: 18px;
+    }
+
+    .e04-section-heading-content h2 {
+        font-size: 2.6rem;
+    }
+
+    .e04-section-heading-content p {
+        font-size: 0.86rem;
+    }
+
+    .e04-tool-button {
+        display: inline-flex;
+        margin-top: 25px;
+    }
+
+    .e04-two-column {
+        grid-template-columns: 1fr;
+        gap: 70px;
+        margin-bottom: 80px;
+    }
+
+    .e04-grid-2,
+    .e04-grid-3,
+    .e04-grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .e04-card-grid {
+        margin-top: 18px;
+    }
+
+    .e04-info-card {
+        padding: 21px;
+    }
+
+    .e04-info-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .e04-info-card p {
+        font-size: 0.74rem;
+    }
+
+    .e04-screenshot-block.e04-full {
+        margin-bottom: 70px;
+    }
+
+    .e04-resource-block {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 70px;
+    }
+
+    .e04-resource-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .e04-data-transition {
+        padding-top: 45px;
+    }
+
+    .e04-data-transition p {
+        font-size: 1.8rem;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .e04-work {
+        padding-left: 4.5vw;
+        padding-right: 4.5vw;
+    }
+
+    .e04-section-heading-content h2 {
+        font-size: 2.25rem;
+    }
+
+    .e04-screenshot-label {
+        font-size: 0.59rem;
+    }
+
+    .e04-image-frame {
+        border-radius: 2px;
+    }
+
+    .e04-tool-button {
+        width: 100%;
+    }
+
+}   
+
+
+/* =========================================================
+   EVIDENCE 04 — CLICKUP SECTION
+   DARK EDITORIAL BACKGROUND
+   ========================================================= */
+
+.clickup-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    width: calc(100% + 14vw);
+    max-width: none;
+    margin-left: -7vw;
+    margin-right: -7vw;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    padding-top: 100px;
+    padding-bottom: 110px;
+
+    border-top: 1px solid rgba(201, 161, 95, 0.28);
+    background: linear-gradient(
+        135deg,
+        #18100E,
+        #3A2420,
+        #5B4034
+    );
+}
+
+/* Base gradient + subtle decorative lighting */
+.clickup-section::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    width: 100vw;
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse at 12% 12%,
+            rgba(201, 161, 95, 0.11) 0%,
+            transparent 34%
+        ),
+        radial-gradient(
+            ellipse at 88% 42%,
+            rgba(122, 100, 88, 0.16) 0%,
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 48% 100%,
+            rgba(24, 16, 14, 0.38) 0%,
+            transparent 48%
+        );
+}
+
+/* Subtle orbital rings and warm starlight */
+.clickup-section::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 14% 18%, transparent 0 92px, rgba(201, 161, 95, 0.10) 93px 94px, transparent 95px),
+        radial-gradient(circle at 14% 18%, transparent 0 112px, rgba(232, 220, 200, 0.045) 113px 114px, transparent 115px),
+        radial-gradient(circle at 86% 32%, transparent 0 132px, rgba(201, 161, 95, 0.09) 133px 134px, transparent 135px),
+        radial-gradient(circle at 86% 32%, transparent 0 153px, rgba(232, 220, 200, 0.04) 154px 155px, transparent 156px),
+        radial-gradient(circle at 70% 78%, transparent 0 174px, rgba(201, 161, 95, 0.075) 175px 176px, transparent 177px),
+        radial-gradient(ellipse at 22% 28%, rgba(201, 161, 95, 0.08), transparent 27%),
+        radial-gradient(ellipse at 78% 62%, rgba(232, 220, 200, 0.045), transparent 24%),
+        linear-gradient(rgba(232, 220, 200, 0.34), rgba(232, 220, 200, 0.34)) 29% 22% / 1px 13px no-repeat,
+        linear-gradient(90deg, rgba(232, 220, 200, 0.34), rgba(232, 220, 200, 0.34)) 29% 22% / 13px 1px no-repeat,
+        linear-gradient(rgba(201, 161, 95, 0.38), rgba(201, 161, 95, 0.38)) 73% 18% / 1px 11px no-repeat,
+        linear-gradient(90deg, rgba(201, 161, 95, 0.38), rgba(201, 161, 95, 0.38)) 73% 18% / 11px 1px no-repeat,
+        linear-gradient(rgba(232, 220, 200, 0.28), rgba(232, 220, 200, 0.28)) 91% 56% / 1px 9px no-repeat,
+        linear-gradient(90deg, rgba(232, 220, 200, 0.28), rgba(232, 220, 200, 0.28)) 91% 56% / 9px 1px no-repeat,
+        radial-gradient(circle at 29% 22%, rgba(232, 220, 200, 0.48) 0 1px, transparent 2px),
+        radial-gradient(circle at 39% 46%, rgba(201, 161, 95, 0.55) 0 1px, transparent 2px),
+        radial-gradient(circle at 73% 18%, rgba(232, 220, 200, 0.42) 0 1px, transparent 2px),
+        radial-gradient(circle at 91% 56%, rgba(201, 161, 95, 0.5) 0 1px, transparent 2px),
+        radial-gradient(circle at 62% 84%, rgba(232, 220, 200, 0.4) 0 1px, transparent 2px);
+
+    pointer-events: none;
+}
+
+/* Keep the content above the decorative background */
+.clickup-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------------------------------------------------------
+   SECTION HEADING
+   --------------------------------------------------------- */
+
+.clickup-section .e04-section-number {
+    color: var(--linen-dark, #C9A15F);
+}
+
+.clickup-section .e04-section-heading-content h2 {
+    color: var(--linen-light, #F4EEE4);
+}
+
+.clickup-section .e04-section-heading-content p {
+    color: rgba(244, 238, 228, 0.76);
+}
+
+.clickup-section .e04-tool-tags {
+    color: var(--linen-dark, #C9A15F);
+}
+
+/* Subtle editorial divider beneath the heading */
+.clickup-section .e04-section-heading {
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(244, 238, 228, 0.10);
+}
+
+/* ---------------------------------------------------------
+   WORKFLOW BUTTON
+   --------------------------------------------------------- */
+
+.clickup-section .e04-tool-button {
+    border-color: rgba(201, 161, 95, 0.72);
+    color: var(--linen-light, #F4EEE4);
+    background: rgba(244, 238, 228, 0.025);
+}
+
+.clickup-section .e04-tool-button:hover {
+    background: var(--linen-dark, #C9A15F);
+    border-color: var(--linen-dark, #C9A15F);
+    color: #18100E;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------------------------------------------------------
+   SCREENSHOT LABELS
+   --------------------------------------------------------- */
+
+.clickup-section .e04-screenshot-label {
+    color: rgba(244, 238, 228, 0.76);
+}
+
+.clickup-section .e04-screenshot-label span {
+    background: var(--redwine, #490b0b);
+    color: #f0eae9;
+}
+
+/* ---------------------------------------------------------
+   SCREENSHOT FRAMES
+   --------------------------------------------------------- */
+
+.clickup-section .e04-image-frame {
+    background: #241714;
+
+    border: 1px solid rgba(244, 238, 228, 0.12);
+
+    box-shadow:
+        0 28px 65px rgba(0, 0, 0, 0.28),
+        0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+/* ---------------------------------------------------------
+   LIGHT CARDS — PRESERVE CONTRAST
+   --------------------------------------------------------- */
+
+.clickup-section .e04-info-card {
+    background: rgba(244, 238, 228, 0.96);
+
+    border: 1px solid rgba(201, 161, 95, 0.22);
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.clickup-section .e04-info-card:hover {
+    background: #F4EEE4;
+
+    border-color: rgba(201, 161, 95, 0.55);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 38px rgba(0, 0, 0, 0.20);
+}
+
+.clickup-section .e04-card-number {
+    color: var(--redwine, #490b0b);
+}
+
+.clickup-section .e04-info-card h3 {
+    color: var(--chocolate, #2c0e19);
+}
+
+.clickup-section .e04-info-card p {
+    color: var(--clay, #7A6458);
+}
+
+/* ---------------------------------------------------------
+   SUBTLE SEPARATION BETWEEN CONTENT GROUPS
+   --------------------------------------------------------- */
+
+.clickup-section .e04-two-column {
+    position: relative;
+    padding-top: 10px;
+}
+
+.clickup-section .e04-two-column::before {
+    content: "";
+    position: absolute;
+
+    top: -38px;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 161, 95, 0.32),
+        transparent
+    );
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 760px) {
+    .clickup-section {
+        width: calc(100% + 10vw);
+        margin-left: -5vw;
+        margin-right: -5vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+
+    .clickup-section .e04-section-heading {
+        padding-bottom: 26px;
+    }
+
+    .clickup-section .e04-two-column::before {
+        top: -30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clickup-section {
+        width: calc(100% + 9vw);
+        margin-left: -4.5vw;
+        margin-right: -4.5vw;
+        padding-left: 4.5vw;
+        padding-right: 4.5vw;
+    }
+}
+
+
+
+</style>
+
+
+
+</head>
+
+<body>
+<nav id="navbar">
+
+    <a href="#hero" class="nav-logo">
+
+        MCCM <span>| Portfolio</span>
+
+    </a>
+
+    <div class="nav-progress">
+
+    <span class="current">04</span>
+
+    <span class="divider">/</span>
+
+    <span class="total">05</span>
+
+</div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="../index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="03evidence.html">Previous</a>
+        </li>
+
+        <li>
+            <a href="05evidence.html">Next</a>
+        </li>
+
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+</nav>
+
+<main>
+<section class="hero reveal" id="hero">
+<div class="hero-content">
+
+    <p class="hero-number">
+        CASE STUDY 04
+    </p>
+
+    <h1>
+        Social Media Assistance
+        <br>
+        & Content Planning
+    </h1>
+
+    <div class="hero-line"></div>
+
+    <p class="hero-text">
+        This case study demonstrates my approach to social media assistance,
+        content planning and digital workflow organization, from developing
+        content strategies and publishing calendars to supporting community
+        management and tracking performance.
+    </p>
+
+    <div class="hero-tags">
+
+        <span>Content Planning</span>
+        <span>Social Media</span>
+        <span>Community</span>
+        <span>Analytics</span>
+
+    </div>
+
+    <div class="hero-scroll">
+        ↓
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- CHALLENGE -->
+<!-- ========================= -->
+
+<section class="challenge reveal" id="challenge">
+
+    <div class="container challenge-grid">
+
+        <div class="challenge-left">
+
+            <p class="section-label">
+                THE APPROACH
+            </p>
+
+            <h2 class="section-title">
+                Building a Structured Social Media Workflow
+            </h2>
+
+            <p class="section-text">
+
+                Effective social media support requires more than creating
+                individual posts. It involves understanding the brand,
+                identifying its audience, planning relevant content and
+                maintaining an organized workflow.
+
+            </p>
+
+            <p class="section-text">
+
+                For this case study, I developed a complete conceptual social
+                media workflow for MANTIZ — Coastal Hostel & Community,
+                applying a structured approach to content planning,
+                organization, community management and performance tracking.
+
+            </p>
+
+        </div>
+
+        <div class="challenge-card">
+
+            <div class="info-item">
+
+                <span>ROLE</span>
+
+                <p>Virtual Assistant — Social Media Support</p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>PROJECT</span>
+
+                <p>MANTIZ — Coastal Hostel & Community</p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>TOOLS</span>
+
+                <p>
+
+                    Notion<br>
+                    Google Workspace<br>
+                    Google Sheets<br>
+                    ClickUp<br>
+                    Looker Studio
+
+                </p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>DELIVERABLE</span>
+
+                <p>
+
+                    Social Media Planning & Management System
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     THE WORK — EVIDENCE 04
+     SOCIAL MEDIA ASSISTANCE & CONTENT PLANNING
+     ========================================================= -->
+
+<section id="the-work" class="e04-work">
+
+    <!-- =====================================================
+         SECTION 01 — NOTION
+         ===================================================== -->
+
+    <div class="e04-tool-section notion-section">
+
+        <div class="e04-section-heading">
+
+            <div class="e04-section-number">
+                01 / NOTION
+            </div>
+
+            <div class="e04-section-heading-content">
+
+                <h2>
+                    Content Strategy, Planning & Community Management
+                </h2>
+
+                <p>
+                    A centralized workspace for organizing social media
+                    strategy, content planning, community interactions
+                    and supporting documentation.
+                </p>
+
+                <span class="e04-tool-tags">
+                    STRATEGY / PLANNING / COMMUNITY / DOCUMENTATION
+                </span>
+
+            </div>
+
+            <a
+                href="https://prickly-acorn-927.notion.site/MANTIZ-Social-Media-Management-Workspace-12eeadcc9b268311b2e1818e2940726a"
+                class="e04-tool-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>View Notion Workspace</span>
+                <span class="e04-button-arrow">↗</span>
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             SCREENSHOT 01
+             ================================================= -->
+
+        <article class="e04-screenshot-block e04-full">
+
+            <div class="e04-screenshot-label">
+                <span>01</span>
+                Workspace Overview
+            </div>
+
+            <div class="e04-image-frame">
+                <img
+                    src="evidences/images/4-1.jpeg"
+                    alt="MANTIZ Notion workspace overview"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="e04-card-grid e04-grid-3">
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">01</span>
+
+                    <h3>Workspace Overview</h3>
+
+                    <p>
+                        Centralized workspace for managing MANTIZ's
+                        social media strategy, planning, community
+                        management and content workflow.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">02</span>
+
+                    <h3>Brand Structure</h3>
+
+                    <p>
+                        Dedicated resources for the client brief,
+                        brand overview, brand identity and
+                        communication guidelines.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">03</span>
+
+                    <h3>Resources</h3>
+
+                    <p>
+                        Structured reference materials keep brand
+                        information accessible and consistent
+                        throughout the workflow.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             SCREENSHOTS 02 + 03
+             ================================================= -->
+
+        <div class="e04-two-column">
+
+            <!-- SCREENSHOT 02 -->
+
+            <article class="e04-screenshot-block">
+
+                <div class="e04-screenshot-label">
+                    <span>02</span>
+                    Content Ideas
+                </div>
+
+                <div class="e04-image-frame">
+                    <img
+                        src="evidences/images/4-2.jpeg"
+                        alt="MANTIZ Notion content ideas database"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="e04-card-stack">
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">01</span>
+
+                        <h3>Content Ideas Database</h3>
+
+                        <p>
+                            Centralized database for capturing,
+                            organizing and developing social media
+                            content ideas.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">02</span>
+
+                        <h3>Multiple Planning Views</h3>
+
+                        <p>
+                            Different views allow content ideas to be
+                            reviewed by pillar, platform, status or
+                            calendar.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">03</span>
+
+                        <h3>Content Classification</h3>
+
+                        <p>
+                            Each idea is organized by content pillar,
+                            format, platform, status and priority.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">04</span>
+
+                        <h3>Content Pipeline</h3>
+
+                        <p>
+                            Individual content ideas can be tracked
+                            from initial concept through review and
+                            preparation.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SCREENSHOT 03 -->
+
+            <article class="e04-screenshot-block">
+
+                <div class="e04-screenshot-label">
+                    <span>03</span>
+                    Audience & Strategy
+                </div>
+
+                <div class="e04-image-frame">
+                    <img
+                        src="evidences/images/4-3.jpeg"
+                        alt="MANTIZ Notion audience and strategy database"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="e04-card-stack">
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">01</span>
+
+                        <h3>Social Media Reference</h3>
+
+                        <p>
+                            Centralized social media information
+                            provides a quick reference for the brand's
+                            active platforms and audience presence.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">02</span>
+
+                        <h3>Strategy Database</h3>
+
+                        <p>
+                            Strategic resources such as social media
+                            strategy, personas, objectives and target
+                            audience are organized in one workspace.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">03</span>
+
+                        <h3>Resource Properties</h3>
+
+                        <p>
+                            Each resource is classified by type,
+                            focus, status, priority and supporting
+                            documentation.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">04</span>
+
+                        <h3>Structured Information</h3>
+
+                        <p>
+                            A structured database makes strategic
+                            information easy to filter, review and
+                            maintain.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- =================================================
+             SCREENSHOT 04
+             ================================================= -->
+
+        <article class="e04-screenshot-block e04-full">
+
+            <div class="e04-screenshot-label">
+                <span>04</span>
+                Content Calendar
+            </div>
+
+            <div class="e04-image-frame e04-image-tall">
+                <img
+                    src="evidences/images/4-4.jpeg"
+                    alt="MANTIZ Notion content calendar"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="e04-card-grid e04-grid-4">
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">01</span>
+
+                    <h3>Monthly Content Calendar</h3>
+
+                    <p>
+                        A calendar view provides a clear overview of
+                        planned social media activity throughout the
+                        month.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">02</span>
+
+                    <h3>Content Preview</h3>
+
+                    <p>
+                        Selected content can be opened directly from
+                        the calendar to review its planning details.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">03</span>
+
+                    <h3>Content Metadata</h3>
+
+                    <p>
+                        Each content item includes objective,
+                        category, audience, format, platform, CTA
+                        and status information.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">04</span>
+
+                    <h3>Content Pillar</h3>
+
+                    <p>
+                        Content pillars connect individual posts to
+                        the broader social media strategy.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             SCREENSHOT 05
+             ================================================= -->
+
+        <article class="e04-screenshot-block e04-full">
+
+            <div class="e04-screenshot-label">
+                <span>05</span>
+                Content Pillars & Campaigns
+            </div>
+
+            <div class="e04-image-frame">
+                <img
+                    src="evidences/images/4-5.jpeg"
+                    alt="MANTIZ Notion content pillars and campaigns"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="e04-card-grid e04-grid-3">
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">01</span>
+
+                    <h3>Content Pillars Framework</h3>
+
+                    <p>
+                        Defines strategic themes used to maintain
+                        consistency across the content system.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">02</span>
+
+                    <h3>Audience & Objective Mapping</h3>
+
+                    <p>
+                        Each pillar connects content themes with
+                        audience segments and strategic objectives.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">03</span>
+
+                    <h3>Pillar Structure</h3>
+
+                    <p>
+                        Content pillars are organized with focus,
+                        audience, objectives and status.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">04</span>
+
+                    <h3>Campaign Database</h3>
+
+                    <p>
+                        Campaigns are organized separately to
+                        coordinate larger initiatives and
+                        promotional themes.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">05</span>
+
+                    <h3>Campaign Planning</h3>
+
+                    <p>
+                        Each campaign includes pillar, content
+                        focus, platforms, status and notes.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">06</span>
+
+                    <h3>Cross-Platform Coordination</h3>
+
+                    <p>
+                        Platform and content relationships make it
+                        easier to coordinate campaigns across
+                        multiple channels.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             SCREENSHOT 06
+             ================================================= -->
+
+        <article class="e04-resource-block">
+
+            <div class="e04-resource-image">
+
+                <div class="e04-screenshot-label">
+                    <span>06</span>
+                    Workspace Resources
+                </div>
+
+                <div class="e04-image-frame">
+                    <img
+                        src="evidences/images/4-6.jpeg"
+                        alt="MANTIZ Notion workspace resources"
+                        loading="lazy"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="e04-resource-cards">
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">01</span>
+                    <h3>Community Management</h3>
+                    <p>
+                        Dedicated workspace for monitoring and
+                        organizing audience interactions.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">02</span>
+                    <h3>Performance Tracking</h3>
+                    <p>
+                        Direct access to the social media performance
+                        database.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">03</span>
+                    <h3>Content Calendar</h3>
+                    <p>
+                        Centralized access to planned content and
+                        publishing activity.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">04</span>
+                    <h3>Social Media Workflow</h3>
+                    <p>
+                        Connects content planning with production
+                        and publishing workflow.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">05</span>
+                    <h3>Portfolio Integration</h3>
+                    <p>
+                        The workspace can connect the working process
+                        with the MCCM portfolio environment.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             SCREENSHOT 07
+             ================================================= -->
+
+        <article class="e04-screenshot-block e04-full">
+
+            <div class="e04-screenshot-label">
+                <span>07</span>
+                Community Management
+            </div>
+
+            <div class="e04-image-frame">
+                <img
+                    src="evidences/images/4-7.jpeg"
+                    alt="MANTIZ Notion community management system"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="e04-card-grid e04-grid-2">
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">01</span>
+
+                    <h3>Community Management System</h3>
+
+                    <p>
+                        Dedicated workspace for monitoring,
+                        organizing and responding to audience
+                        interactions.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">02</span>
+
+                    <h3>Interaction Database</h3>
+
+                    <p>
+                        Centralized database for audience messages,
+                        questions, feedback and inquiries.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">03</span>
+
+                    <h3>Response Management</h3>
+
+                    <p>
+                        Priority, status, escalation and follow-up
+                        fields support consistent and timely
+                        responses.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">04</span>
+
+                    <h3>Representative Interactions</h3>
+
+                    <p>
+                        Simulated interactions demonstrate how
+                        different audience situations can be
+                        categorized and managed.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- =====================================================
+         SECTION 02 — CLICKUP
+         ===================================================== -->
+
+    <div class="e04-tool-section clickup-section">
+
+        <div class="e04-section-heading">
+
+            <div class="e04-section-number">
+                02 / CLICKUP
+            </div>
+
+            <div class="e04-section-heading-content">
+
+                <h2>
+                    Social Media Workflow & Production Management
+                </h2>
+
+                <p>
+                    Turning planned content into an organized
+                    production workflow.
+                </p>
+
+                <span class="e04-tool-tags">
+                    IDEA → PLANNING → PRODUCTION → REVIEW →
+                    APPROVED → SCHEDULED → PUBLISHED
+                </span>
+
+            </div>
+
+            <a
+                href="https://sharing.clickup.com/90171511981/l/h/2kza855d-477/70d2866d582d3e9"
+                class="e04-tool-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>View ClickUp Workflow</span>
+                <span class="e04-button-arrow">↗</span>
+            </a>
+
+        </div>
+
+
+        <!-- SCREENSHOT 08 -->
+
+        <article class="e04-screenshot-block e04-full">
+
+            <div class="e04-screenshot-label">
+                <span>08</span>
+                Workflow Board
+            </div>
+
+            <div class="e04-image-frame">
+                <img
+                    src="evidences/images/4-8.jpeg"
+                    alt="MANTIZ ClickUp social media workflow board"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="e04-card-grid e04-grid-3">
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">01</span>
+                    <h3>Idea Stage</h3>
+                    <p>
+                        New content ideas enter the workflow before
+                        production.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">02</span>
+                    <h3>Planning Stage</h3>
+                    <p>
+                        Content is prepared with dates, priorities
+                        and production requirements.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">03</span>
+                    <h3>Production</h3>
+                    <p>
+                        Active content moves into production once
+                        planning is complete.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">04</span>
+                    <h3>Ready for Scheduling</h3>
+                    <p>
+                        Approved content is prepared for the next
+                        publishing stage.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">05</span>
+                    <h3>Scheduled</h3>
+                    <p>
+                        Completed content moves into the scheduled
+                        publishing state.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">06</span>
+                    <h3>Published</h3>
+                    <p>
+                        Final stage confirms that content moved
+                        through the complete production workflow.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- SCREENSHOTS 09 + 10 -->
+
+        <div class="e04-two-column">
+
+            <!-- 09 -->
+
+            <article class="e04-screenshot-block">
+
+                <div class="e04-screenshot-label">
+                    <span>09</span>
+                    Task Detail
+                </div>
+
+                <div class="e04-image-frame">
+                    <img
+                        src="evidences/images/4-9.jpeg"
+                        alt="MANTIZ ClickUp content task detail"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="e04-card-stack">
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">01</span>
+                        <h3>Content Task</h3>
+                        <p>
+                            Each content piece is managed as an
+                            individual production task.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">02</span>
+                        <h3>Task Status & Priority</h3>
+                        <p>
+                            Status, deadline, priority and time
+                            estimates organize requirements.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">03</span>
+                        <h3>Custom Fields</h3>
+                        <p>
+                            Strategic information such as pillar,
+                            objective, audience, platform, format
+                            and CTA is attached to each task.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 10 -->
+
+            <article class="e04-screenshot-block">
+
+                <div class="e04-screenshot-label">
+                    <span>10</span>
+                    Content Brief & Checklist
+                </div>
+
+                <div class="e04-image-frame">
+                    <img
+                        src="evidences/images/4-10.jpeg"
+                        alt="MANTIZ ClickUp content brief and production checklist"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="e04-card-stack">
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">01</span>
+                        <h3>Content Brief</h3>
+                        <p>
+                            Defines purpose, audience and core
+                            production requirements.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">02</span>
+                        <h3>Creative Direction</h3>
+                        <p>
+                            Provides guidance for visual treatment,
+                            structure and messaging.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">03</span>
+                        <h3>Production Checklist</h3>
+                        <p>
+                            Supports quality control before content
+                            is approved and published.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SECTION 03 — GOOGLE SHEETS
+         ===================================================== -->
+
+    <div class="e04-tool-section sheets-section">
+
+        <div class="e04-section-heading">
+
+            <div class="e04-section-number">
+                03 / GOOGLE SHEETS
+            </div>
+
+            <div class="e04-section-heading-content">
+
+                <h2>
+                    Performance Tracking & Reporting
+                </h2>
+
+                <p>
+                    From organized data to actionable social media
+                    insights.
+                </p>
+
+                <span class="e04-tool-tags">
+                    TRACK / MEASURE / ANALYZE / OPTIMIZE
+                </span>
+
+            </div>
+
+            <a
+                href="https://docs.google.com/spreadsheets/d/1VP4DmD9AvGyafvQko3auy5A5h4XQg46s_snZeOMqYho/edit?usp=sharing"
+                class="e04-tool-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>View Performance Tracking</span>
+                <span class="e04-button-arrow">↗</span>
+            </a>
+
+        </div>
+
+
+        <!-- SCREENSHOT 11 -->
+
+        <article class="e04-screenshot-block e04-full">
+
+            <div class="e04-screenshot-label">
+                <span>11</span>
+                Performance Tracking
+            </div>
+
+            <div class="e04-image-frame">
+                <img
+                    src="evidences/images/4-11.jpeg"
+                    alt="MANTIZ Google Sheets performance tracking"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="e04-card-grid e04-grid-4">
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">01</span>
+                    <h3>Content-Level Tracking</h3>
+                    <p>
+                        Each published content piece is recorded
+                        individually for detailed performance history.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">02</span>
+                    <h3>Platform & Format</h3>
+                    <p>
+                        Platform and content type allow comparisons
+                        across channels and formats.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">03</span>
+                    <h3>Core Metrics</h3>
+                    <p>
+                        Reach, impressions, views, likes, comments,
+                        saves, shares and clicks are tracked.
+                    </p>
+                </div>
+
+                <div class="e04-info-card">
+                    <span class="e04-card-number">04</span>
+                    <h3>Optimization Layer</h3>
+                    <p>
+                        Performance data is connected with key
+                        insights and recommended optimization actions.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- SCREENSHOTS 12 + 13 -->
+
+        <div class="e04-two-column">
+
+            <!-- 12 -->
+
+            <article class="e04-screenshot-block">
+
+                <div class="e04-screenshot-label">
+                    <span>12</span>
+                    Performance Tracking Detail
+                </div>
+
+                <div class="e04-image-frame">
+                    <img
+                        src="evidences/images/4-12.jpeg"
+                        alt="MANTIZ Google Sheets performance tracking detail"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="e04-card-stack">
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">01</span>
+                        <h3>Structured Data</h3>
+                        <p>
+                            Consistent fields create a standardized
+                            system for recording social media
+                            performance.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">02</span>
+                        <h3>Engagement Measurement</h3>
+                        <p>
+                            Engagement and engagement rate show
+                            audience response to each content piece.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">03</span>
+                        <h3>Actionable Reporting</h3>
+                        <p>
+                            Tracking performance alongside insights
+                            creates a direct connection between data
+                            and future content decisions.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 13 -->
+
+            <article class="e04-screenshot-block">
+
+                <div class="e04-screenshot-label">
+                    <span>13</span>
+                    Reporting & Insights
+                </div>
+
+                <div class="e04-image-frame">
+                    <img
+                        src="evidences/images/4-13.jpeg"
+                        alt="MANTIZ Google Sheets reporting and insights"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="e04-card-stack">
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">01</span>
+                        <h3>KPI Summary</h3>
+                        <p>
+                            Consolidates reach, impressions,
+                            engagement, engagement rate, shares
+                            and clicks.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">02</span>
+                        <h3>Platform & Pillar Analysis</h3>
+                        <p>
+                            Performance is compared across platforms
+                            and content pillars.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">03</span>
+                        <h3>Insights & Recommendations</h3>
+                        <p>
+                            Performance patterns are translated into
+                            practical recommendations.
+                        </p>
+                    </div>
+
+                    <div class="e04-info-card">
+                        <span class="e04-card-number">04</span>
+                        <h3>Performance Summary</h3>
+                        <p>
+                            A concise, client-ready overview brings
+                            the main findings together.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FROM DATA TO DECISIONS
+         ===================================================== -->
+
+    <div class="e04-data-transition">
+
+        <span>FROM DATA TO DECISIONS</span>
+
+        <p>
+            A structured workflow connects strategy, content
+            production, community management and performance
+            analysis into one system.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- PROJECT PROCESS -->
+<!-- ========================= -->
+
+<section class="workflow reveal" id="workflow">
+
+    <div class="container">
+
+        <p class="section-label">
+            PROJECT PROCESS
+        </p>
+
+        <h2 class="section-title">
+            From Strategy to Performance
+        </h2>
+
+        <p class="section-text">
+
+            The project followed a structured social media workflow designed
+            to connect strategy, content planning, organization, community
+            support and performance analysis.
+
+        </p>
+
+        <div class="process-line">
+
+            <div class="process-step">
+
+                <div class="circle">
+                    01
+                </div>
+
+                <h3>
+                    Brand & Audience
+                </h3>
+
+                <p>
+                    Understanding the brand, audience and communication goals.
+                </p>
+
+            </div>
+
+            <div class="process-step">
+
+                <div class="circle">
+                    02
+                </div>
+
+                <h3>
+                    Content Planning
+                </h3>
+
+                <p>
+                    Developing content pillars, ideas, campaigns and calendars.
+                </p>
+
+            </div>
+
+            <div class="process-step">
+
+                <div class="circle">
+                    03
+                </div>
+
+                <h3>
+                    Workflow & Community
+                </h3>
+
+                <p>
+                    Organizing production and supporting community management.
+                </p>
+
+            </div>
+
+            <div class="process-step">
+
+                <div class="circle">
+                    04
+                </div>
+
+                <h3>
+                    Performance
+                </h3>
+
+                <p>
+                    Tracking results, identifying insights and optimizing content.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- FINAL RESULT -->
+<!-- ========================= -->
+
+<section class="final-result reveal" id="final-result">
+
+    <div class="container">
+
+        <p class="section-label">
+            PROJECT OUTCOME
+        </p>
+
+        <div class="result-grid">
+
+            <div class="result-box">
+
+                <h2>
+                    A Complete Social Media Support System
+                </h2>
+
+                <p>
+
+                    This project demonstrates my ability to support social media
+                    operations through structured planning, content organization,
+                    workflow management and performance tracking.
+
+                    Rather than treating social media as a collection of
+                    individual posts, I approached the project as a complete
+                    system connecting strategy, execution, community and data.
+
+                </p>
+
+                <div class="result-list">
+
+                    <div class="result-item">
+
+                        <span>✓</span>
+
+                        <p>
+                            Structured content planning system
+                        </p>
+
+                    </div>
+
+                    <div class="result-item">
+
+                        <span>✓</span>
+
+                        <p>
+                            Organized social media workflow
+                        </p>
+
+                    </div>
+
+                    <div class="result-item">
+
+                        <span>✓</span>
+
+                        <p>
+                            Content calendar and campaign planning
+                        </p>
+
+                    </div>
+
+                    <div class="result-item">
+
+                        <span>✓</span>
+
+                        <p>
+                            Community management structure
+                        </p>
+
+                    </div>
+
+                    <div class="result-item">
+
+                        <span>✓</span>
+
+                        <p>
+                            Performance tracking and analytics
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="case-summary">
+
+                <p class="summary-label">
+                    CASE STUDY
+                </p>
+
+                <div class="summary-item">
+
+                    <span>Service</span>
+
+                    <p>Social Media Assistance</p>
+
+                </div>
+
+                <div class="summary-item">
+
+                    <span>Project</span>
+
+                    <p>MANTIZ — Coastal Hostel & Community</p>
+
+                </div>
+
+                <div class="summary-item">
+
+                    <span>Focus</span>
+
+                    <p>Content Planning & Social Media Support</p>
+
+                </div>
+
+                <div class="summary-item">
+
+                    <span>Project Type</span>
+
+                    <p>Conceptual Portfolio Project</p>
+
+                </div>
+
+                <blockquote>
+
+                    "A structured approach to social media support,
+                    connecting content planning, organization,
+                    community and performance."
+
+                </blockquote>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MCCM</div>
+  <p class="footer-text">© 2026 María Claudia Collante Méndez · Virtual Assistant · All rights reserved</p>
+</footer>
+
+<script>
+
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', reveal);
+
+reveal();
+
+function reveal(){
+
+    reveals.forEach(el=>{
+
+        const top = el.getBoundingClientRect().top;
+
+        const windowHeight = window.innerHeight;
+
+        if(top < windowHeight-120){
+
+            el.classList.add('active');
+
+        }
+
+    });
+
+}
+
+
+
+</script>
+
+ <script>
+
+const navbar = document.getElementById("navbar");
+
+const sectionThemes = [
+    { element: document.querySelector("#hero"), isDark: true },
+    { element: document.querySelector("#challenge"), isDark: false },
+    { element: document.querySelector("#the-work"), isDark: false },
+    { element: document.querySelector(".clickup-section"), isDark: true },
+    { element: document.querySelector(".sheets-section"), isDark: false },
+    { element: document.querySelector(".e04-data-transition"), isDark: false },
+    { element: document.querySelector("#workflow"), isDark: false },
+    { element: document.querySelector("#final-result"), isDark: true }
+].filter(({ element }) => element);
+
+function updateNavbar(){
+
+    const navProbeY = navbar.getBoundingClientRect().bottom;
+    const activeTheme = sectionThemes
+        .map(({ element, isDark }) => ({
+            element,
+            isDark,
+            rect: element.getBoundingClientRect()
+        }))
+        .filter(({ rect }) => rect.top <= navProbeY && rect.bottom >= navProbeY)
+        .sort((a, b) => b.rect.top - a.rect.top)[0];
+    const dark = activeTheme ? activeTheme.isDark : false;
+
+    if(dark){
+
+        navbar.classList.add("dark-section");
+        navbar.classList.remove("light-section");
+
+    }else{
+
+        navbar.classList.add("light-section");
+        navbar.classList.remove("dark-section");
+
+    }
+
+}
+
+window.addEventListener("scroll", updateNavbar, { passive: true });
+window.addEventListener("resize", updateNavbar);
+
+window.addEventListener("load", updateNavbar);
+
+</script>
+
+</body>
+</html>
